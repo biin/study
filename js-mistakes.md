@@ -1,2 +1,2 @@
-1. Accidentally Using the Assignment Operator
+1. 실수로 할당 연산자를 사용 
 =============================================
