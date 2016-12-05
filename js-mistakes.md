@@ -23,7 +23,24 @@
 
 2. Expecting Loose Comparison
 =============================
-### In regular comparison, data type does not matter. This if statement returns true:
+#### In regular comparison, data type does not matter. This if statement returns true:
     var x = 10;
     var y = "10";
     if (x == y)
+#### In strict comparison, data type does matter. This if statement returns false:
+    var x = 10;
+    var y = "10";
+    if (x === y)
+####It is a common mistake to forget that switch statements use strict comparison:
+This case switch will display an alert:
+    
+    var x = 10;
+    switch(x) {
+        case 10: alert("Hello");
+    }
+
+#### This case switch will not display an alert:
+    var x = 10;
+    switch(x) {
+        case "10": alert("Hello");
+    }
