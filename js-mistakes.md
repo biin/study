@@ -207,6 +207,7 @@ Incorrect:
     points = [40, 100, 1, 5, 25, 10,];
 
 Some JSON and JavaScript engines will fail, or behave unexpectedly.
+
 Correct:
 
     points = [40, 100, 1, 5, 25, 10];
@@ -218,7 +219,8 @@ Incorrect:
 
     person = {firstName:"John", lastName:"Doe", age:46,}
 
-Some JSON and JavaScript engines will fail, or behave unexpectedly.    
+Some JSON and JavaScript engines will fail, or behave unexpectedly.
+
 Correct:
 
     person = {firstName:"John", lastName:"Doe", age:46}
@@ -233,7 +235,8 @@ Incorrect:
 
     if (myObj !== null && typeof myObj !== "undefined") 
 
-Because of this, you must test typeof() first:  
+Because of this, you must test typeof() first:
+
 Correct:
 
     if (typeof myObj !== "undefined" && myObj !== null) 
