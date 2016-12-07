@@ -61,6 +61,7 @@
     var z = x + y;           // the result in z is "105"
 
 4. Misunderstanding Floats
+==========================
 #### All numbers in JavaScript are stored as 64-bits Floating point numbers (Floats).
 #### All programming languages, including JavaScript, have difficulties with precise floating point values:
     var x = 0.1;
@@ -68,4 +69,16 @@
     var z = x + y            // the result in z will not be 0.3
 #### To solve the problem above, it helps to multiply and divide:
     var z = (x * 10 + y * 10) / 10;       // z will be 0.3
+    
+5. Breaking a JavaScript String
+===============================
+#### JavaScript will allow you to break a statement into two lines:
+    var x =
+    "Hello World!";
+#### But, breaking a statement in the middle of a string will not work:
+    var x = "Hello
+    World!";
+#### You must use a "backslash" if you must break a statement in a string:     
+    var x = "Hello \
+    World!";
     
