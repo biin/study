@@ -1,7 +1,7 @@
 1. 실수로 할당 연산자를 사용 
 ======================
 
-JavaScript는 다른 언어와 다르게 strict하지 않기 때문에 예기치 못한 결과를 초래할 수 있다. if 문에 실수로 비교연산자(==)가 아닌 할당연산자(=)를 사용하는 오류를 범할 수 있다.
+JavaScript는 다른 언어와 다르게 strict하지 않기 때문에 예기치 못한 결과를 초래할 수 있다. **if** 문에 실수로 비교연산자(==)가 아닌 할당연산자(=)를 사용하는 오류를 범할 수 있다.
     
     var x = 0;
     if (x == 10) {
@@ -13,13 +13,13 @@ JavaScript는 다른 언어와 다르게 strict하지 않기 때문에 예기치
     if (x = 10) {
     }
 
-이 if문에서는 x에 10이 할당되는데 10은 true로 평가가 되기 때문에 if문은 true로 평가된다.
+이 **if**문에서는 x에 10이 할당되는데 10은 **true**로 평가가 되기 때문에 if문은 true로 평가된다.
 
     var x = 0;
     if (x = 0) {
     }
 
-이 if문에서는 0을 할당하게 되는데 이떄 0은 false로 평가되기 때문에 이 if문은 타지 않는다.
+이 **if**문에서는 0을 할당하게 되는데 이떄 0은 **false**로 평가되기 때문에 이 if문은 타지 않는다.
 
 2. Expecting Loose Comparison
 =============================
@@ -52,8 +52,8 @@ This case switch will not display an alert:
 
 3. Confusing Addition & Concatenation
 =====================================
-Addition is about adding numbers.
-Concatenation is about adding strings.
+**Addition** is about adding **numbers**.
+**Concatenation** is about adding **strings**.
 In JavaScript both operations use the same + operator.
 Because of this, adding a number as a number will produce a different result from adding a number as a string:
 
@@ -72,7 +72,7 @@ When adding two variables, it can be difficult to anticipate the result:
 
 4. Misunderstanding Floats
 ==========================
-All numbers in JavaScript are stored as 64-bits Floating point numbers (Floats).
+All numbers in JavaScript are stored as 64-bits **Floating point numbers** (Floats).
 All programming languages, including JavaScript, have difficulties with precise floating point values:
 
     var x = 0.1;
@@ -120,7 +120,7 @@ Because of this, these two examples will return the same result:
     }
     
     function myFunction(a) {
-        var power = 10;
+        var power = 10;
         return a * power;
     }   
 
@@ -224,7 +224,7 @@ Correct:
     
 11. Undefined is Not Null
 =========================
-With JavaScript, null is for objects, undefined is for variables, properties, and methods.
+With JavaScript, **null** is for objects, **undefined** is for variables, properties, and methods.
 To be null, an object has to be defined, otherwise it will be undefined.
 If you want to test if an object exists, this will throw an error if the object is undefined:
 
@@ -239,8 +239,8 @@ Correct:
     
 12. Expecting Block Level Scope
 ===============================
-JavaScript does not create a new scope for each code block.
-It is true in many programming languages, but not true in JavaScript.
+JavaScript **does not** create a new scope for each code block.
+It is true in many programming languages, but **not true** in JavaScript.
 It is a common mistake, among new JavaScript developers, to believe that this code returns undefined:
 
     for (var i = 0; i < 10; i++) {
