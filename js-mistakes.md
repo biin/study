@@ -119,13 +119,15 @@
     }
     //The function will return undefined!
     //Why? Because JavaScript thinks you meant:
+    
     function myFunction(a) {
         var
         power = 10;  
         return;
         a * power;
     }
-    // Explanation :
+    
+    // Explanation :
     // If a statement is incomplete like:
     var
     // JavaScript will try to complete the statement by reading the next line:
@@ -177,7 +179,7 @@
     //Incorrect:
     person = {firstName:"John", lastName:"Doe", age:46,}
     //Some JSON and JavaScript engines will fail, or behave unexpectedly.
-    
+        
     //Correct:
     person = {firstName:"John", lastName:"Doe", age:46}
     
@@ -189,7 +191,7 @@
     Incorrect:
     if (myObj !== null && typeof myObj !== "undefined") 
     Because of this, you must test typeof() first:
-
+    
     Correct:
     if (typeof myObj !== "undefined" && myObj !== null) 
     
