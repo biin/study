@@ -90,3 +90,116 @@
         // code block  
     }
     
+7. Breaking a Return Statement
+==============================
+#### It is a default JavaScript behavior to close a statement automatically at the end of a line.
+#### Because of this, these two examples will return the same result:
+    function myFunction(a) {
+        var power = 10  
+        return a * power
+    }
+    
+    function myFunction(a) {
+        var power = 10;
+        return a * power;
+    }   
+#### JavaScript will also allow you to break a statement into two lines.
+#### Because of this, example 3 will also return the same result:
+    function myFunction(a) {
+        var
+        power = 10;  
+        return a * power;
+    }
+#### But, what will happen if you break the return statement in two lines like this:
+    function myFunction(a) {
+        var
+        power = 10;  
+        return
+        a * power;
+    }
+    //The function will return undefined!
+    //Why? Because JavaScript thinks you meant:
+    function myFunction(a) {
+        var
+        power = 10;  
+        return;
+        a * power;
+    }
+    // Explanation :
+    // If a statement is incomplete like:
+    var
+    // JavaScript will try to complete the statement by reading the next line:
+    power = 10;
+    // But since this statement is complete:
+    return
+    // JavaScript will automatically close it like this:
+    return;
+    
+#### This happens because closing (ending) statements with semicolon is optional in JavaScript.
+#### JavaScript will close the return statement at the end of the line, because it is a complete statement.
+#### => Never break a return statement.
+
+8. Accessing Arrays with Named Indexes
+======================================
+#### Many programming languages support arrays with named indexes.
+#### Arrays with named indexes are called associative arrays (or hashes).
+#### JavaScript does not support arrays with named indexes.
+#### In JavaScript, arrays use numbered indexes:
+    var person = [];
+    person[0] = "John";
+    person[1] = "Doe";
+    person[2] = 46;
+    var x = person.length;         // person.length will return 3
+    var y = person[0];             // person[0] will return "John"
+
+#### In JavaScript, objects use named indexes.
+#### If you use a named index, when accessing an array, JavaScript will redefine the array to a standard object.
+#### After the automatic redefinition, array methods and properties will produce undefined or incorrect results:
+    var person = [];
+    person["firstName"] = "John";
+    person["lastName"] = "Doe";
+    person["age"] = 46;
+    var x = person.length;         // person.length will return 0
+    var y = person[0];             // person[0] will return undefined
+    
+9. Ending an Array Definition with a Comma
+==========================================
+    
+    //Incorrect:
+    points = [40, 100, 1, 5, 25, 10,];
+    //Some JSON and JavaScript engines will fail, or behave unexpectedly.
+    //Correct:
+    points = [40, 100, 1, 5, 25, 10];
+    
+10. Ending an Object Definition with a Comma
+============================================
+
+    //Incorrect:
+    person = {firstName:"John", lastName:"Doe", age:46,}
+    //Some JSON and JavaScript engines will fail, or behave unexpectedly.
+    
+    //Correct:
+    person = {firstName:"John", lastName:"Doe", age:46}
+    
+11. Undefined is Not Null
+=========================
+#### With JavaScript, null is for objects, undefined is for variables, properties, and methods.
+#### To be null, an object has to be defined, otherwise it will be undefined.
+#### If you want to test if an object exists, this will throw an error if the object is undefined:
+    Incorrect:
+    if (myObj !== null && typeof myObj !== "undefined") 
+    Because of this, you must test typeof() first:
+
+    Correct:
+    if (typeof myObj !== "undefined" && myObj !== null) 
+    
+12. Expecting Block Level Scope
+===============================
+#### JavaScript does not create a new scope for each code block.
+#### It is true in many programming languages, but not true in JavaScript.
+#### It is a common mistake, among new JavaScript developers, to believe that this code returns undefined:
+
+    for (var i = 0; i < 10; i++) {
+        // some code
+    }
+    return i;
