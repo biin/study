@@ -59,3 +59,13 @@
     var x = 10;
     var y = "5";
     var z = x + y;           // the result in z is "105"
+
+4. Misunderstanding Floats
+#### All numbers in JavaScript are stored as 64-bits Floating point numbers (Floats).
+#### All programming languages, including JavaScript, have difficulties with precise floating point values:
+    var x = 0.1;
+    var y = 0.2;
+    var z = x + y            // the result in z will not be 0.3
+#### To solve the problem above, it helps to multiply and divide:
+    var z = (x * 10 + y * 10) / 10;       // z will be 0.3
+    
