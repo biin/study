@@ -1,9 +1,10 @@
 1. 실수로 할당 연산자를 사용 
 ======================
 
-JavaScript는 다른 언어와 다르게 strict하지 않기 때문에 예기치 못한 결과를 초래할 수 있다. **if** 문에 실수로 비교연산자(==)가 아닌 할당연산자(=)를 사용하는 오류를 범할 수 있다.
-    
-    var x = 0;
+JavaScript는 다른 언어와 다르게 strict하지 않기 때문에 예기치 못한 결과를 초래할 수 있다.  
+**if** 문에 실수로 비교연산자(==)가 아닌 할당연산자(=)를 사용하는 오류를 범할 수 있다. 
+     
+    var x = 0;
     if (x == 10) {
     }
 
@@ -13,8 +14,8 @@ JavaScript는 다른 언어와 다르게 strict하지 않기 때문에 예기치
     if (x = 10) {
     }
 
-이 **if**문에서는 x에 10이 할당되는데 10은 **true**로 평가가 되기 때문에 if문은 true로 평가된다.
-
+이 **if**문에서는 x에 10이 할당되는데 10은 **true**로 평가가 되기 때문에 if문은 true로 평가된다.  
+    
     var x = 0;
     if (x = 0) {
     }
@@ -52,9 +53,9 @@ This case switch will not display an alert:
 
 3. Confusing Addition & Concatenation
 =====================================
-**Addition** is about adding **numbers**.
-**Concatenation** is about adding **strings**.
-In JavaScript both operations use the same + operator.
+**Addition** is about adding **numbers**.  
+**Concatenation** is about adding **strings**.  
+In JavaScript both operations use the same + operator.  
 Because of this, adding a number as a number will produce a different result from adding a number as a string:
 
     var x = 10 + 5;          // the result in x is 15
@@ -72,7 +73,7 @@ When adding two variables, it can be difficult to anticipate the result:
 
 4. Misunderstanding Floats
 ==========================
-All numbers in JavaScript are stored as 64-bits **Floating point numbers** (Floats).
+All numbers in JavaScript are stored as 64-bits **Floating point numbers** (Floats).  
 All programming languages, including JavaScript, have difficulties with precise floating point values:
 
     var x = 0.1;
@@ -111,7 +112,7 @@ Because of a misplaced semicolon, this code block will execute regardless of the
     
 7. Breaking a Return Statement
 ==============================
-It is a default JavaScript behavior to close a statement automatically at the end of a line.
+It is a default JavaScript behavior to close a statement automatically at the end of a line.  
 Because of this, these two examples will return the same result:
 
     function myFunction(a) {
@@ -124,7 +125,7 @@ Because of this, these two examples will return the same result:
         return a * power;
     }   
 
-JavaScript will also allow you to break a statement into two lines.
+JavaScript will also allow you to break a statement into two lines.  
 Because of this, example 3 will also return the same result:
 
     function myFunction(a) {
@@ -142,7 +143,7 @@ But, what will happen if you break the return statement in two lines like this:
         a * power;
     }
 
-The function will return undefined!
+The function will return undefined!  
 Why? Because JavaScript thinks you meant:
     
     function myFunction(a) {
@@ -152,7 +153,7 @@ Why? Because JavaScript thinks you meant:
         a * power;
     }
     
-Explanation :
+Explanation :  
 If a statement is incomplete like:
 
     var
@@ -169,15 +170,15 @@ JavaScript will automatically close it like this:
 
     return;
     
-This happens because closing (ending) statements with semicolon is optional in JavaScript.
-JavaScript will close the return statement at the end of the line, because it is a complete statement.
+This happens because closing (ending) statements with semicolon is optional in JavaScript.  
+JavaScript will close the return statement at the end of the line, because it is a complete statement.  
 => Never break a return statement.
 
 8. Accessing Arrays with Named Indexes
 ======================================
-Many programming languages support arrays with named indexes.
-Arrays with named indexes are called associative arrays (or hashes).
-JavaScript does not support arrays with named indexes.
+Many programming languages support arrays with named indexes.  
+Arrays with named indexes are called associative arrays (or hashes).  
+JavaScript does not support arrays with named indexes.  
 In JavaScript, arrays use numbered indexes:
 
     var person = [];
@@ -187,8 +188,8 @@ In JavaScript, arrays use numbered indexes:
     var x = person.length;         // person.length will return 3
     var y = person[0];             // person[0] will return "John"
 
-In JavaScript, objects use named indexes.
-If you use a named index, when accessing an array, JavaScript will redefine the array to a standard object.
+In JavaScript, objects use named indexes.  
+If you use a named index, when accessing an array, JavaScript will redefine the array to a standard object.  
 After the automatic redefinition, array methods and properties will produce undefined or incorrect results:
 
     var person = [];
@@ -224,23 +225,23 @@ Correct:
     
 11. Undefined is Not Null
 =========================
-With JavaScript, **null** is for objects, **undefined** is for variables, properties, and methods.
-To be null, an object has to be defined, otherwise it will be undefined.
+With JavaScript, **null** is for objects, **undefined** is for variables, properties, and methods.  
+To be null, an object has to be defined, otherwise it will be undefined.  
 If you want to test if an object exists, this will throw an error if the object is undefined:
 
 Incorrect:
 
     if (myObj !== null && typeof myObj !== "undefined") 
 
-Because of this, you must test typeof() first:    
+Because of this, you must test typeof() first:  
 Correct:
 
     if (typeof myObj !== "undefined" && myObj !== null) 
     
 12. Expecting Block Level Scope
 ===============================
-JavaScript **does not** create a new scope for each code block.
-It is true in many programming languages, but **not true** in JavaScript.
+JavaScript **does not** create a new scope for each code block.  
+It is true in many programming languages, but **not true** in JavaScript.  
 It is a common mistake, among new JavaScript developers, to believe that this code returns undefined:
 
     for (var i = 0; i < 10; i++) {
