@@ -81,4 +81,12 @@
 #### You must use a "backslash" if you must break a statement in a string:     
     var x = "Hello \
     World!";
+
+6. Misplacing Semicolon
+=======================
+#### Because of a misplaced semicolon, this code block will execute regardless of the value of x:
+    if (x == 19);
+    {
+        // code block  
+    }
     
